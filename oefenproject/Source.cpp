@@ -68,24 +68,71 @@
 
 //6.11
 
-#include <stdio.h>
+//#include <stdio.h>
+//
+//int main()
+//#define SIZE 4
+//{
+//	int a[SIZE] = {5, 8, 1, 2};
+//
+//		
+//		int smallest = a[0];
+//		for (size_t i = 0; i < SIZE ; i++)
+//		{
+//			if (a[i] < smallest)
+//			{
+//				smallest = a[i];
+//			}
+//		}
+//		printf("smallest is %d", smallest);
+//}
 
-int main()
-#define SIZE 4
-{
-	int a[SIZE] = {5, 8, 1, 2};
 
-	if (SIZE > 0)
-	{
-		int smallest = a[0];
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int a[4] = {5, 2, 9, 6};
+//
+//	int smallest = a[0];
+//	for (int i = 0; i < 4; i++)
+//	{
+//		if (a[i] < smallest)
+//		{
+//			smallest = a[i];
+//		}
+//	}
+//	printf("%d is smallest", smallest);
+//}
 
-		for (size_t i = 0; i <= SIZE ; i++)
-		{
-			if (smallest > a[i])
-			{
-				smallest = a[i];
-			}
-		}
-		printf("smallest is %d", smallest);
-	}
-}
+
+
+
+//6.14
+
+//#include <stdio.h>
+//#include <cstdlib>
+//#include <ctime>
+//
+//int main()
+//{
+//	int rollone = 0;
+//	int rolltwo = 0;
+//	int sum = 0;
+//	
+//	int hist[13] = {};
+//
+//	for (int count = 0; count < 36000; ++count)
+//	{
+//		rollone = (rand() % 6) + 1;
+//		rolltwo = (rand() % 6) + 1;
+//		sum = rollone + rolltwo;
+//		hist[sum]++;
+//	}
+//
+//	for (int i = 2; i <= 12; ++i)
+//	{
+//		printf("%d", hist[i]);
+//	}
+//}
+
