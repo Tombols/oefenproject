@@ -75,64 +75,83 @@
 //{
 //	int a[SIZE] = {5, 8, 1, 2};
 //
-//		
+//	if (SIZE > 0)
+//	{
 //		int smallest = a[0];
-//		for (size_t i = 0; i < SIZE ; i++)
+//
+//		for (size_t i = 0; i <= SIZE ; i++)
 //		{
-//			if (a[i] < smallest)
+//			if (smallest > a[i])
 //			{
 //				smallest = a[i];
 //			}
 //		}
 //		printf("smallest is %d", smallest);
+//	}
 //}
 
+
+
+
+
+
+//10.6, 10.10, 10.12, 10.13
 
 //#include <stdio.h>
-//
-//int main()
+//struct customer
 //{
-//	int a[4] = {5, 2, 9, 6};
+//	char lastName[30];
+//	char firstName[15];
+//	unsigned int customerNumber;
 //
-//	int smallest = a[0];
-//	for (int i = 0; i < 4; i++)
+//	struct
 //	{
-//		if (a[i] < smallest)
-//		{
-//			smallest = a[i];
-//		}
-//	}
-//	printf("%d is smallest", smallest);
+//		char phoneNumber[11];
+//		char adress[50];
+//		char city[15];
+//		char state[3];
+//		char zipCode[6];
+//	} personal;
+//} customerRecord, *customerPtr;
+//customerPtr = &customerRecord;
+//
+//int main(void)
+//{
+//	customer p = { "Wennametjaindehsumma", "Koentje" };
+//	printf("%s\t%s", p.lastName, p.firstName);
 //}
 
 
+//10.10
 
+#include <stdio.h>
+void displayBits(unsigned int value);
 
-//6.14
+int main(void)
+{
+	unsigned int number1 = 920;
 
-//#include <stdio.h>
-//#include <cstdlib>
-//#include <ctime>
-//
-//int main()
-//{
-//	int rollone = 0;
-//	int rolltwo = 0;
-//	int sum = 0;
-//	
-//	int hist[13] = {};
-//
-//	for (int count = 0; count < 36000; ++count)
-//	{
-//		rollone = (rand() % 6) + 1;
-//		rolltwo = (rand() % 6) + 1;
-//		sum = rollone + rolltwo;
-//		hist[sum]++;
-//	}
-//
-//	for (int i = 2; i <= 12; ++i)
-//	{
-//		printf("%d", hist[i]);
-//	}
-//}
+	puts("\nThe result of right shifting");
+	displayBits(number1);
+	puts("4 bit positions using the right shift operator >> is");
+	displayBits(number1 >> 4);
+}
 
+void displayBits(unsigned int value)
+{
+	unsigned int displayMask = 1 << 31;
+
+	printf("%7u = ", value);
+
+	for (unsigned int c = 1; c <= 32; ++c)
+	{
+		putchar(value & displayMask ? '1' : '0');
+		value <<= 1;
+
+		if (c % 8 == 0)
+		{
+			putchar(' ');
+		}
+	}
+
+}
