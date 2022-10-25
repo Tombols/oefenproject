@@ -68,24 +68,90 @@
 
 //6.11
 
+//#include <stdio.h>
+//
+//int main()
+//#define SIZE 4
+//{
+//	int a[SIZE] = {5, 8, 1, 2};
+//
+//	if (SIZE > 0)
+//	{
+//		int smallest = a[0];
+//
+//		for (size_t i = 0; i <= SIZE ; i++)
+//		{
+//			if (smallest > a[i])
+//			{
+//				smallest = a[i];
+//			}
+//		}
+//		printf("smallest is %d", smallest);
+//	}
+//}
+
+
+
+
+
+
+//10.6, 10.10, 10.12, 10.13
+
+//#include <stdio.h>
+//struct customer
+//{
+//	char lastName[30];
+//	char firstName[15];
+//	unsigned int customerNumber;
+//
+//	struct
+//	{
+//		char phoneNumber[11];
+//		char adress[50];
+//		char city[15];
+//		char state[3];
+//		char zipCode[6];
+//	} personal;
+//} customerRecord, *customerPtr;
+//customerPtr = &customerRecord;
+//
+//int main(void)
+//{
+//	customer p = { "Wennametjaindehsumma", "Koentje" };
+//	printf("%s\t%s", p.lastName, p.firstName);
+//}
+
+
+//10.10
+
 #include <stdio.h>
+void displayBits(unsigned int value);
 
-int main()
-#define SIZE 4
+int main(void)
 {
-	int a[SIZE] = {5, 8, 1, 2};
+	unsigned int number1 = 920;
 
-	if (SIZE > 0)
+	puts("\nThe result of right shifting");
+	displayBits(number1);
+	puts("4 bit positions using the right shift operator >> is");
+	displayBits(number1 >> 4);
+}
+
+void displayBits(unsigned int value)
+{
+	unsigned int displayMask = 1 << 31;
+
+	printf("%7u = ", value);
+
+	for (unsigned int c = 1; c <= 32; ++c)
 	{
-		int smallest = a[0];
+		putchar(value & displayMask ? '1' : '0');
+		value <<= 1;
 
-		for (size_t i = 0; i <= SIZE ; i++)
+		if (c % 8 == 0)
 		{
-			if (smallest > a[i])
-			{
-				smallest = a[i];
-			}
+			putchar(' ');
 		}
-		printf("smallest is %d", smallest);
 	}
+
 }
